@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="header">
+	<img src="<%= images[0].url %>" alt="profile pic"
+	     width="<%= images[0].width %>" height="<%= images[0].height %>">
+
+	<h1><%= display_name %>'s Account</h1>
+    </div>
+    <div class="account-info">
+	<ul>
+	    <li>Email: <%= email %></li>
+	    <li>ID: <%= id %></li>
+	    <li>Account type: <%= product %></li>
+	</ul>
+    </div>
+
+    <div class="hidden" id="artist-lst">
+	
+    </div>
+    <button id="artist-btn" hx-get="/top" hx-target="#artist-lst">Top 5 artist</button>
+
+</body>
+</html>

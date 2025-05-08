@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="/script.js"></script>
+</head>
+<body>
+    <div class="header">
+	<img class="pro-pic" src="<%= images[0].url %>" alt="profile pic">
+
+	<h1><%= display_name %>'s Account</h1>
+    </div>
+    <div class="account-info">
+	<ul>
+	    <li>Email: <%= email %></li>
+	    <li>ID: <%= id %></li>
+	    <li>Account type: <%= product %></li>
+	</ul>
+    </div>
+    <div class="options">
+	<button id="artist-btn" hx-get="/top" hx-target="#artist-lst" >Top 5 Tracks</button>
+	<button id="playlist-btn" hx-get="/playlists" hx-target="#playlist-lst">My Playlists</button>
+    </div>
+    <div class="content">
+	<div class="hidden" id="artist-lst"></div>
+
+	<div class="hidden" id="playlist-lst"></div>
+    </div>
+
+
+</body>
+</html>
+
